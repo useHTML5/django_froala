@@ -1,0 +1,44 @@
+{% load cms_tags sekizai_tags compress thumbnail %}
+{% spaceless %}
+    <div class="siling" style="background-image: url({{ instance.pic.url }});">
+        {% if instance.green %}
+            <div class="siling_green siling_green_{{ instance.green }}"></div>
+        {% endif %}
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-6 py-5">
+                    {% if instance.text_side == 'left' %}
+                        <div class="siling_text_left">
+                            {% for plugin in instance.child_plugin_instances %}
+                                {% render_plugin plugin %}
+                            {% endfor %}
+                            <div class="clearfix"></div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-lg-6 py-5">
+                    {% if instance.text_side == 'right' %}
+                        <div class="siling_text_right">
+                            {% for plugin in instance.child_plugin_instances %}
+                                {% render_plugin plugin %}
+                            {% endfor %}
+                            <div class="clearfix"></div>
+                        </div>
+
+                    {% endif %}
+                </div>
+            </div>
+            {#            <div class="siling_in text-white text-center p-xl-5 mt-2 ">#}
+            {#                {% for plugin in instance.child_plugin_instances %}#}
+            {#                    {% render_plugin plugin %}#}
+            {#                {% endfor %}#}
+            {#            </div>#}
+            {#            <div class="clearfix"></div>#}
+        </div>
+    </div>{% endspaceless %}
+{% addtoblock 'css' %}
+    {% compress css %}
+        <link href="/static/siling/style.scss" rel="stylesheet" type="text/x-scss"/>
+    {% endcompress %}
+{% endaddtoblock %}
+

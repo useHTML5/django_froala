@@ -1,0 +1,42 @@
+{% load cms_tags sekizai_tags compress thumbnail %}
+
+<section class="fdb-block">
+    <div class="container">
+        <div class="row text-center align-items-center">
+            <div class="col-8 col-md-4">
+                <img alt="image" class="img-fluid"
+                     src="{% thumbnail intance.pic1.file  %}">
+            </div>
+
+            <div class="col-4 col-md-2">
+                <div class="row">
+                    <div class="col-12">
+                        <img alt="image" class="img-fluid"
+                             src="{% thumbnail intance.pic2.file  %}">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <img alt="image" class="img-fluid"
+                             src="{% thumbnail intance.pic3.file  %}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-5 ml-auto pt-5 pt-md-0">
+                <img alt="image" class="fdb-icon" src="{% thumbnail intance.pic4.file  %}">
+                <div>
+                    {{ instance.html|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% addtoblock 'css' %}
+    {% compress css %}
+        <link href="/static/froala_content/img3_text_img/style.scss" rel="stylesheet" type="text/x-scss"/>
+    {% endcompress %}
+{% endaddtoblock %}
+
