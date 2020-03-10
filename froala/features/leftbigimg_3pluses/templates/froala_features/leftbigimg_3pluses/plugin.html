@@ -1,0 +1,49 @@
+{% load cms_tags sekizai_tags compress thumbnail %}
+
+<section class="fdb-block">
+    <div class="container">
+        <div class="row text-right align-items-center">
+            <div class="col-7 col-md-4 m-auto">
+                <img alt="image" class="img-fluid"
+                     src="{% thumbnail instance.pic_big 1000x1000 crop %}">
+            </div>
+
+            <div class="col-12 col-md-7 col-lg-5 m-auto text-left pt-5 pt-md-0">
+                <div class="row pb-lg-5">
+                    <div class="col-3">
+                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic1 60x60 %}">
+                    </div>
+                    <div class="col-9">
+                        {{ instance.html1|safe }}
+                    </div>
+                </div>
+
+                <div class="row pt-4 pt-md-5 pb-lg-5">
+                    <div class="col-3">
+                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic2 60x60 %}">
+                    </div>
+                    <div class="col-9">
+                        {{ instance.html2|safe }}
+                    </div>
+                </div>
+
+
+                <div class="row pt-4 pt-md-5">
+                    <div class="col-3">
+                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic3 60x60 %}">
+                    </div>
+                    <div class="col-9">
+                        {{ instance.html3|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% addtoblock 'css' %}
+    {% compress css %}
+        <link href="/static/froala_features/leftbigimg_3pluses/style.scss" rel="stylesheet" type="text/x-scss"/>
+    {% endcompress %}
+{% endaddtoblock %}
+

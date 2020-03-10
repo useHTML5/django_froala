@@ -1,14 +1,13 @@
-Bootstrap-scss
+Django CMS Froala Blocks
 =====
+requirements.txt
 
-Scss files of bootstrap.
+git+https://github.com/useHTML5/django_froala.git#egg=django_froala
 
-git+https://github.com/useHTML5/bootstrap-scss.git@4.4.1-1#egg=bootstrap_scss #наша версия бутстрапа
-
-path in apps ''
 
 intalled_apps = {
 
-'bootstrap_scss',
-
+'froala',
+'froala.contents.img3_text_img',
+'froala.services.img_text',
 }

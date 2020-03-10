@@ -3,29 +3,29 @@
 <section class="fdb-block">
     <div class="container">
         <div class="row text-center align-items-center">
-            <div class="col-8 col-md-4">
+            <div class="col-8 col-md-4 text-md-right">
                 <img alt="image" class="img-fluid"
-                     src="{% thumbnail intance.pic1.file  %}">
+                     src="{% thumbnail instance.pic1 390x390 crop %}">
             </div>
 
-            <div class="col-4 col-md-2">
+            <div class="col-4 col-md-2 text-md-left">
                 <div class="row">
                     <div class="col-12">
                         <img alt="image" class="img-fluid"
-                             src="{% thumbnail intance.pic2.file  %}">
+                             src="{% thumbnail instance.pic2 120x120 crop %}">
                     </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-12">
                         <img alt="image" class="img-fluid"
-                             src="{% thumbnail intance.pic3.file  %}">
+                             src="{% thumbnail instance.pic3 160x160 crop  %}">
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-5 ml-auto pt-5 pt-md-0">
-                <img alt="image" class="fdb-icon" src="{% thumbnail intance.pic4.file  %}">
+                <img alt="image" class="fdb-icon1 img-fluid" src="{% thumbnail instance.pic4 440x440 %}">
                 <div>
                     {{ instance.html|safe }}
                 </div>
@@ -36,7 +36,7 @@
 
 {% addtoblock 'css' %}
     {% compress css %}
-        <link href="/static/froala_content/img3_text_img/style.scss" rel="stylesheet" type="text/x-scss"/>
+        <link href="/static/froala_contents/img3_text_img/style.scss" rel="stylesheet" type="text/x-scss"/>
     {% endcompress %}
 {% endaddtoblock %}
 
