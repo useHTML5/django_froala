@@ -1,0 +1,32 @@
+@import "froala/bs";
+
+.super_header {
+  .super_header_line {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    //margin: 0 0 30px;
+    color: $primary;
+    background-color: transparent;
+
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      width: 100px;
+      height: 2px;
+      background-color: $primary;
+    }
+
+    &:before {
+      left: 100%;
+    }
+
+    &:after {
+      right: 100%;
+    }
+  }
+}
+
+
+

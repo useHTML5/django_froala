@@ -1,6 +1,9 @@
 {% load cms_tags sekizai_tags compress thumbnail %}
 
 <section class="fdb-block">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col-8 col-md-4 text-md-right">
@@ -19,7 +22,7 @@
                 <div class="row mt-4">
                     <div class="col-12">
                         <img alt="image" class="img-fluid"
-                             src="{% thumbnail instance.pic3 160x160 crop  %}">
+                             src="{% thumbnail instance.pic3 160x160 crop %}">
                     </div>
                 </div>
             </div>

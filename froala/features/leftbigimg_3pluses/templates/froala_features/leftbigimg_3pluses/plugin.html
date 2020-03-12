@@ -1,36 +1,48 @@
 {% load cms_tags sekizai_tags compress thumbnail %}
 
 <section class="fdb-block">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
     <div class="container">
         <div class="row text-right align-items-center">
             <div class="col-7 col-md-4 m-auto">
                 <img alt="image" class="img-fluid"
                      src="{% thumbnail instance.pic_big 1000x1000 crop %}">
             </div>
-
             <div class="col-12 col-md-7 col-lg-5 m-auto text-left pt-5 pt-md-0">
                 <div class="row pb-lg-5">
                     <div class="col-3">
-                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic1 60x60 %}">
+                        {% if instance.pic1 %}
+                            <img alt="image" class="img-fluid" src="{% thumbnail instance.pic1 60x60 %}">
+                        {% elif instance.ico1 %}
+                            {{ instance.ico1|safe }}
+                        {% endif %}
                     </div>
                     <div class="col-9">
                         {{ instance.html1|safe }}
                     </div>
                 </div>
-
                 <div class="row pt-4 pt-md-5 pb-lg-5">
                     <div class="col-3">
-                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic2 60x60 %}">
+                        {% if instance.pic2 %}
+                            <img alt="image" class="img-fluid" src="{% thumbnail instance.pic2 60x60 %}">
+                        {% elif instance.ico2 %}
+                            {{ instance.ico2|safe }}
+                        {% endif %}
+
                     </div>
                     <div class="col-9">
                         {{ instance.html2|safe }}
                     </div>
                 </div>
-
-
                 <div class="row pt-4 pt-md-5">
                     <div class="col-3">
-                        <img alt="image" class="img-fluid" src="{% thumbnail instance.pic3 60x60 %}">
+                        {% if instance.pic3 %}
+                            <img alt="image" class="img-fluid" src="{% thumbnail instance.pic3 60x60 %}">
+                        {% elif instance.ico3 %}
+                            {{ instance.ico3|safe }}
+                        {% endif %}
                     </div>
                     <div class="col-9">
                         {{ instance.html3|safe }}

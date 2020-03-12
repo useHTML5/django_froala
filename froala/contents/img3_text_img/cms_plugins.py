@@ -30,3 +30,4 @@ class Froala3imgTextImg(CMSPluginBase):
     model = models.ModelFroala3imgTextImg
     name = '3 изображения и изображение+текст'
     render_template = 'froala_contents/img3_text_img/plugin.html'
+    allow_children = True

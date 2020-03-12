@@ -5,6 +5,8 @@ from cms.plugin_pool import plugin_pool
 from . import models
 
 
+# from . import forms
+
 # from django.utils.translation import ugettext as _
 # from django.contrib import admin
 # from adminsortable.admin import NonSortableParentAdmin, SortableTabularInline
@@ -25,9 +27,9 @@ from . import models
 # inlines = [InlinePic, ]
 
 @plugin_pool.register_plugin
-class FroalaLeftBigImg3pluses(CMSPluginBase):
-    module = "Преимущества блоки"
-    model = models.ModelLeftBigImg3pluses
-    name = 'Большое изображение слева и 3 плюса справа'
-    render_template = 'froala_features/leftbigimg_3pluses/plugin.html'
-    allow_children = True
+class FroalaSuperHeader(CMSPluginBase):
+    module = "Блоки стандартные"
+    model = models.ModelFroalaSuperHeader
+    name = 'Супер заголовок'
+    render_template = 'froala_blocks/super_header/plugin.html'
+    # form = forms.FormFroalaServiceImgText

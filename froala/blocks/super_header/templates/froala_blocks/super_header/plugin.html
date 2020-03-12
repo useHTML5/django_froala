@@ -1,0 +1,33 @@
+{% load cms_tags sekizai_tags compress thumbnail %}
+
+<div class="super_header super_header_{{ instance.conf.slug }} {{ instance.classes }} mb-2 text-{{ instance.conf.align }}">
+    <div class="{{ instance.conf.title_class }}">{{ instance.title|safe }}</div>
+    <span class="super_header_line"><i class="{{ instance.conf.icon_class }}" aria-hidden="true"></i></span>
+</div>
+
+{% addtoblock 'css' %}
+    <link href="/static/froala_blocks/super_header/style.scss" rel="stylesheet" type="text/x-scss"/>
+    <style>
+        .super_header.super_header_{{ instance.conf.slug }} .super_header_line:after, .super_header.super_header_{{ instance.conf.slug }} .super_header_line:before {
+        {% if instance.conf.line_width %}
+            width: {{ instance.conf.line_width }}px;
+        {% endif %}
+        {% if instance.conf.line_height %}
+            height: {{ instance.conf.line_height }}px;
+        {% endif %}
+        {% if instance.conf.color_line %}
+            background-color: {{ instance.conf.color_line }};
+        {% endif %}
+        }
+
+        .super_header.super_header_{{ instance.conf.slug }} .super_header_line {
+        {% if instance.conf.icon_size %}
+            font-size: {{ instance.conf.icon_size }}px;
+        {% endif %}
+        {% if instance.conf.color_icon %}
+            color: {{ instance.conf.color_icon }};
+        {% endif %}
+        }
+    </style>
+{% endaddtoblock %}
+
