@@ -3,7 +3,7 @@
 
 <div class="row left_icon_text {{ instance.classes }} {{ instance.conf.classes }} left_icon_text_{{ instance.conf.slug }}">
     {% if instance.conf.align == 'left' %}
-        {% include 'froala_blocks/left_icon_text/icon_col.html' %}
+        {% include 'blocks/left_icon_text/icon_col.html' %}
     {% endif %}
     <div class="{{ instance.conf.col_html_classes }}">
         {% for plugin in instance.child_plugin_instances %}
@@ -11,12 +11,12 @@
         {% endfor %}
     </div>
     {% if instance.conf.align == 'right' %}
-        {% include 'froala_blocks/left_icon_text/icon_col.html' %}
+        {% include 'blocks/left_icon_text/icon_col.html' %}
     {% endif %}
 </div>
 
 {% addtoblock 'css' %}
-    <link href="/static/froala_blocks/left_icon_text/style.scss" rel="stylesheet" type="text/x-scss"/>
+    <link href="/static/blocks/left_icon_text/style.scss" rel="stylesheet" type="text/x-scss"/>
     <style>
         .left_icon_text.left_icon_text_{{ instance.conf.slug }} .left_icon_text_ico {
         {% if instance.conf.ico_size %}

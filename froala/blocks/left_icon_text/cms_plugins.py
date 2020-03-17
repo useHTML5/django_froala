@@ -10,5 +10,5 @@ class FroalaLeftIconText(CMSPluginBase):
     module = "Блоки стандартные"
     model = models.ModelFroalaLeftIconText
     name = 'Иконка слева и текст'
-    render_template = 'froala_blocks/left_icon_text/plugin.html'
+    render_template = 'blocks/left_icon_text/plugin.html'
     allow_children = True

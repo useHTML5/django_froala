@@ -29,5 +29,4 @@ class FroalaServiceImgText(CMSPluginBase):
     module = "Блоки услуг"
     model = models.ModelFroalaServiceImgText
     name = 'Изображение и текст'
-    render_template = 'froala_services/img_text/plugin.html'
-    #form = forms.FormFroalaServiceImgText
+    render_template = 'services/img_text/plugin.html'

@@ -5,8 +5,6 @@ from cms.plugin_pool import plugin_pool
 from . import models
 
 
-# from . import forms
-
 # from django.utils.translation import ugettext as _
 # from django.contrib import admin
 # from adminsortable.admin import NonSortableParentAdmin, SortableTabularInline
@@ -27,9 +25,9 @@ from . import models
 # inlines = [InlinePic, ]
 
 @plugin_pool.register_plugin
-class FroalaSuperHeader(CMSPluginBase):
+class PageTitlePlugin(CMSPluginBase):
     module = "Блоки стандартные"
-    model = models.ModelFroalaSuperHeader
-    name = 'Супер заголовок'
-    render_template = 'blocks/super_header/plugin.html'
-    # form = forms.FormFroalaServiceImgText
+    model = models.ModelPageTitle
+    name = 'Блок с хлебными крошками, изображением и названием страницы'
+    render_template = 'blocks/page_title/plugin.html'
+    allow_children = True

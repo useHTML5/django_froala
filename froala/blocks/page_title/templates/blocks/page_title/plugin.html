@@ -1,0 +1,32 @@
+{% load i18n menu_tags cms_tags seo_tags sekizai_tags thumbnail %}
+
+
+<section class="page_title bg-gray"
+         style="background-image: url('{% thumbnail instance.pic 1900x1900 %}');
+                 {% if instance.color %}
+                     background-color: {{ instance.conf.color }};
+                 {% endif %}
+                 {% if instance.conf.blend %}
+                     background-blend-mode: {{ instance.conf.blend }};
+                 {% endif %}
+                 "
+>
+    <div class="container">
+        <div class="py-4">
+            <div class="text-right mb-10 d-flex justify-content-end">
+                {% show_breadcrumb 0 "blocks/breadcrumbs.html" %}
+            </div>
+            <div class="mt-6">
+                <h1 class="text-white">{% page_attribute "title" %}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% addtoblock "js" %}
+{% endaddtoblock %}
+
+
+{% addtoblock "css" %}
+    <link href='/static/blocks/page_title/style.scss' rel='stylesheet' type='text/x-scss'/>
+{% endaddtoblock %}

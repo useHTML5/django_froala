@@ -29,5 +29,5 @@ class FroalaLeftBigImg3pluses(CMSPluginBase):
     module = "Преимущества блоки"
     model = models.ModelLeftBigImg3pluses
     name = 'Большое изображение слева и 3 плюса справа'
-    render_template = 'froala_features/leftbigimg_3pluses/plugin.html'
+    render_template = 'features/leftbigimg_3pluses/plugin.html'
     allow_children = True

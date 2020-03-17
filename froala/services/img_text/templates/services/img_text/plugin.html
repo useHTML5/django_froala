@@ -1,0 +1,37 @@
+{% load cms_tags sekizai_tags compress thumbnail %}
+
+<div class="text-center pt-2 d-flex justify-content- justify-content- flex-column flex-grow-1 mt-1">
+    {% if instance.link %}
+        <a href="{{ instance.link.get_absolute_url }}" class="">
+            <img src="{% thumbnail instance.pic 125x125 crop %}" class="rounded-circle mb-2" alt="">
+        </a>
+    {% else %}
+        <div>
+            <img src="{% thumbnail instance.pic 125x125 crop %}" class="rounded-circle mb-2" alt="">
+        </div>
+    {% endif %}
+    {% if instance.link %}
+        <a href="{{ instance.link.get_absolute_url }}" class="mb-3 d-block h3 font-weight-bolder">
+            {{ instance.title }}
+        </a>
+    {% else %}
+        <div class="mb-3 d-block h3 font-weight-bolder">
+            {{ instance.title }}
+        </div>
+    {% endif %}
+    <div class="mb-1 px-3 flex-fill">
+        {{ instance.html|safe }}
+    </div>
+    {% if instance.link %}
+        <a href="{{ instance.link.get_absolute_url }}" class="mb-3 btn btn-secondary align-self-center">
+            {{ instance.link_text }}
+        </a>
+    {% endif %}
+</div>
+
+{% addtoblock 'css' %}
+    {% compress css %}
+        <link href="/static/services/img_text/style.scss" rel="stylesheet" type="text/x-scss"/>
+    {% endcompress %}
+{% endaddtoblock %}
+
